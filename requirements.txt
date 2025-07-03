@@ -1,0 +1,26 @@
+# Interfaz web
+streamlit
+
+# Manejo de datos
+pandas
+numpy
+
+# Visualizaciones
+plotly
+
+# OLAP interactivo con HTML
+pivottablejs
+
+# Bases de datos
+sqlalchemy
+psycopg2-binary    # PostgreSQL
+sqlite3                     # Built-in en Python, pero incluido como referencia
+
+# Otros utilitarios
+watchdog            # Para desarrollo local con Streamlit (opcional)
+openpyxl             # Para trabajar con archivos Excel (si es necesario)
+xlrd               # Para leer archivos Excel antiguos (xls)
+python-dotenv       # Para usar variables de entorno (si usas .env)
+
+# Recomendado para compatibilidad general
+requests
