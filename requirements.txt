@@ -14,7 +14,6 @@ pivottablejs
 # Bases de datos
 sqlalchemy
 psycopg2-binary    # PostgreSQL
-sqlite3                     # Built-in en Python, pero incluido como referencia
 
 # Otros utilitarios
 watchdog            # Para desarrollo local con Streamlit (opcional)
