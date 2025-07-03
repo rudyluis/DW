@@ -6,7 +6,7 @@ import plotly.express as px
 import streamlit.components.v1 as components
 import tempfile
 #instalar stremlit-aggrid   
-import streamlit_ag_grid as ag_grid
+from st_aggrid import AgGrid
 st.set_page_config(page_title="Dashboard OLAP por Ciudad y Producto", layout="wide")
 st.subheader("📊 OLAP – Ventas por Ciudad, Producto y Fecha")
 
@@ -148,5 +148,5 @@ with tab3:
         components.html(html_content, height=600, scrolling=True)
 with tab4:
     st.subheader("📈 Tabla OLAP (Datos)")
-    ag_grid(df_filtrado)
+    AgGrid(df_filtrado, enable_enterprise_modules=True, height=600)
 
