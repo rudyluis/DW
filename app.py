@@ -5,9 +5,10 @@ from pivottablejs import pivot_ui
 import plotly.express as px
 import streamlit.components.v1 as components
 import tempfile
-
+#instalar stremlit-aggrid   
+import streamlit_ag_grid as ag_grid
 st.set_page_config(page_title="Dashboard OLAP por Ciudad y Producto", layout="wide")
-st.title("📊 OLAP – Ventas por Ciudad, Producto y Fecha")
+st.subheader("📊 OLAP – Ventas por Ciudad, Producto y Fecha")
 
 # Conexión PostgreSQL
 @st.cache_resource
@@ -84,7 +85,7 @@ df_filtrado["y_producto"] = df_filtrado["numero_articulo"].astype("category").ca
 df_filtrado["z_fecha"] = df_filtrado["fecha"].astype("category").cat.codes
 
 # Tabs
-tab1, tab2, tab3 = st.tabs(["📊 Dashboard", "🧊 Cubo OLAP 3D", "📌 Pivot Table Interactiva"])
+tab1, tab2, tab3, tab4 = st.tabs(["📊 Dashboard", "🧊 Cubo OLAP 3D", "📌 Pivot Table Interactiva", "📈 Datos Tabla"])
 
 # ---------------- TAB 1: Dashboard ----------------
 with tab1:
@@ -145,3 +146,7 @@ with tab3:
         with open(f.name, "r", encoding="utf-8") as file:
             html_content = file.read()
         components.html(html_content, height=600, scrolling=True)
+with tab4:
+    st.subheader("📈 Tabla OLAP (Datos)")
+    ag_grid(df_filtrado)
+

@@ -24,3 +24,5 @@ python-dotenv       # Para usar variables de entorno (si usas .env)
 # Recomendado para compatibilidad general
 requests
 ipython
+
+streamlit-aggrid
